@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "dgSpecHash": "FbcqkWeMgQh4s2jtYaEycXT6KykWBfVBXtnTW4/13IrK7+Zn/oxZ4wlaDbh7/IpBTvs9+5c54APktNXKWhHadg==",
+  "success": true,
+  "projectFilePath": "/home/motiejus/Codes/c#/osillo/osillo.csproj",
+  "expectedPackageFiles": [
+    "/root/.nuget/packages/microsoft.win32.registry/6.0.0-preview.1.21102.12/microsoft.win32.registry.6.0.0-preview.1.21102.12.nupkg.sha512",
+    "/root/.nuget/packages/runtime.linux-arm.runtime.native.system.io.ports/6.0.0-preview.1.21102.12/runtime.linux-arm.runtime.native.system.io.ports.6.0.0-preview.1.21102.12.nupkg.sha512",
+    "/root/.nuget/packages/runtime.linux-arm64.runtime.native.system.io.ports/6.0.0-preview.1.21102.12/runtime.linux-arm64.runtime.native.system.io.ports.6.0.0-preview.1.21102.12.nupkg.sha512",
+    "/root/.nuget/packages/runtime.linux-x64.runtime.native.system.io.ports/6.0.0-preview.1.21102.12/runtime.linux-x64.runtime.native.system.io.ports.6.0.0-preview.1.21102.12.nupkg.sha512",
+    "/root/.nuget/packages/runtime.native.system.io.ports/6.0.0-preview.1.21102.12/runtime.native.system.io.ports.6.0.0-preview.1.21102.12.nupkg.sha512",
+    "/root/.nuget/packages/runtime.osx-x64.runtime.native.system.io.ports/6.0.0-preview.1.21102.12/runtime.osx-x64.runtime.native.system.io.ports.6.0.0-preview.1.21102.12.nupkg.sha512",
+    "/root/.nuget/packages/system.io.ports/6.0.0-preview.1.21102.12/system.io.ports.6.0.0-preview.1.21102.12.nupkg.sha512",
+    "/root/.nuget/packages/system.security.accesscontrol/6.0.0-preview.1.21102.12/system.security.accesscontrol.6.0.0-preview.1.21102.12.nupkg.sha512",
+    "/root/.nuget/packages/system.security.principal.windows/6.0.0-preview.1.21102.12/system.security.principal.windows.6.0.0-preview.1.21102.12.nupkg.sha512"
+  ],
+  "logs": []
+}
