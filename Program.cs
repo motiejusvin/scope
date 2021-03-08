@@ -45,32 +45,33 @@ namespace osillo
 
             try
             {
-                int conv = Convert.ToInt32(message) / Console.BufferHeight;
+                int conv = Convert.ToInt32(message) / Console.BufferHeight ;
                 if (x > Console.BufferWidth)
                 {
-                    Console.Clear();
+		    Console.Clear();
                     x = 0;
-                }
-
-                if (conv > prevy)
+               	
+		}
+		
+                if (-conv+Console.BufferHeight > prevy)
                 {
-                    for (; prevy < -conv+Console.BufferHeight; prevy++)
+                    for (; prevy <= -conv+Console.BufferHeight; prevy++)
                     {
                         Console.SetCursorPosition(x,prevy);
-                        Console.Write("*");
+                        Console.Write("\u2588");
                     }
                 }
-                else if(conv < prevy)
+		else if(-conv+Console.BufferHeight < prevy)
                 {
                     for (; prevy > -conv+Console.BufferHeight; prevy--)
                     {
                         Console.SetCursorPosition(x,prevy);
-                        Console.Write("*");
+			Console.Write("\u2588");
                     }
                 }
-		prevy = -conv+Console.BufferHeight;
+		//prevy = -conv+Console.BufferHeight;
                 Console.SetCursorPosition(x, (-conv+Console.BufferHeight));
-                Console.Write("*");
+                Console.Write("\u2588");
                 x++;
             }
             catch
