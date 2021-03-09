@@ -5,17 +5,13 @@ namespace osillo
 {
     class Program
     {
-	static string[] mes = new string[5];
-	static int ch = 0; 
+	static string[] mes = new string[5]; 
 	static int freemode = 2;
-	static ConsoleKey kf;
 	static bool wasth = false;
         static bool ground = false;
 	static int treshold = 500;
-	static int yoff = 0;
         static int x = 0,prevy = 0,prevy2 = 0;
         static SerialPort sp = new SerialPort();
-        static int[] vls = new int[10000];
         static void Main(string[] args)
         {
 	    Console.WriteLine("freemode");
@@ -23,12 +19,7 @@ namespace osillo
             Console.CursorVisible = false;
             Console.Clear();
             string data = "";
-	    try{
-            sp.PortName = "/dev/ttyUSB0";
-	    }
-	    catch{
-		sp.PortName = "/dev/ttyUSB1";
-	    }
+            
 	    sp.BaudRate = 115200;
             try
             {
@@ -38,7 +29,6 @@ namespace osillo
             {
                 
             }
-	    //System.Threading.Thread.Sleep(1000);
             while (true)
             {
                 Read();
@@ -57,11 +47,11 @@ namespace osillo
                 message = sp.ReadLine();
 		mes = message.Split("-");
 	    }
-
-            catch (TimeoutException)
+            catch
             {
                 message = "11";
-            }
+            	
+	    }
             
 	    try
             {
@@ -70,18 +60,16 @@ namespace osillo
 			    ground = true;
 			    Console.WriteLine("Ground on");
 		    }
-                int conv = Convert.ToInt32(mes[0]) / Console.BufferHeight * 2;
-		int conv2 = Convert.ToInt32(mes[1]) / Console.BufferHeight * 2 + (Console.BufferHeight / 2);
+                int conv = Convert.ToInt32(mes[0]) / Console.BufferHeight * 1;
+		int conv2 = Convert.ToInt32(mes[1]) / Console.BufferHeight * 1 + (Console.BufferHeight / 2); //this section is buggy,and i dont know why it works.
                 if(Convert.ToInt32(mes[ch]) >= treshold  || freemode == 2 || wasth == true || freemode == 1  )
 		{
-			//Console.WriteLine(Convert.ToInt32(message).ToString());
-			//return
 			if(freemode == 3 || freemode == 1){
 				wasth = true;
 			}
 
 			if (x > Console.BufferWidth)
-			{   //conv += Console.BufferHeight / 3;
+			{   
 			    if(freemode == 3)
 			    {
 				System.Environment.Exit(0);	    
@@ -97,8 +85,6 @@ namespace osillo
 				x = 0;
 			    }
 			     
-			    //System.Threading.Thread.Sleep(100);
-			    //Console.Clear();
 			    wasth = false;
 			    message = "";
 			}
@@ -143,7 +129,6 @@ namespace osillo
 			Console.SetCursorPosition(x, (-conv+Console.BufferHeight));
 			Console.Write("\u2588");
 			x++;
-			//System.Threading.Thread.Sleep(1);
 		    }
 	    }
             
